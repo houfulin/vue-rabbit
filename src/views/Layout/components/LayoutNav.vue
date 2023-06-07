@@ -1,4 +1,6 @@
 <script setup>
+import { useUserStore } from "@/stores/user";
+const userStore = useUserStore();
 </script>
 
 <template>
@@ -6,9 +8,12 @@
     <div class="container">
       <ul>
         <!-- 多模板渲染 区分登录和非登录状态 -->
-        <template v-if="false">
+        <template v-if="userStore.userInfo.token">
           <li>
-            <a href="javascript:;"><i class="iconfont icon-user"></i>周杰伦</a>
+            <a href="javascript:;"
+              ><i class="iconfont icon-user"></i
+              >{{ userStore.userInfo.account }}</a
+            >
           </li>
           <li>
             <el-popconfirm

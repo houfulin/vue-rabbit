@@ -32,6 +32,7 @@ httpInstance.interceptors.response.use(res => res.data, e => {
         type: 'warning',
         message: e.response.data.message
     })
+
     //401token失效处理
     //1.清除本地用户数据
     //2.跳转登录页
@@ -39,6 +40,7 @@ httpInstance.interceptors.response.use(res => res.data, e => {
         userStore.clearUserInfo()
         router.push('/login')
     }
+
     return Promise.reject(e)
 })
 

@@ -100,7 +100,7 @@ watch([elementX, elementY, isOutside], () => {
       class="large"
       :style="[
         {
-          backgroundImage: `url(${imageList[0]})`,
+          backgroundImage: `url(${imageList[activeIndex]})`,
           backgroundPositionX: `${positionX}px`,
           backgroundPositionY: `${positionY}px`,
         },
